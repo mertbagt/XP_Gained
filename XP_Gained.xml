@@ -83,7 +83,9 @@
         if xpOld == -1 then
 	        Note ('initializing xp')
 	      else
-	        Note ('You have gained xp: ' .. xpDiff)
+	        ColourNote (
+            "gray", "black", "You have gained xp: ",
+            "cornflowerblue", "black", xpDiff)
           SetStatus ("You have gained xp: ", xpDiff)
 	      end
 	 
@@ -93,8 +95,12 @@
 	        SetVariable("xpAccum", xpAccum)
 	   
 	        t:DeleteOutput()
-	        t:Note ('You have gained xp: ' .. xpDiff)
-	        t:Note ('Accumulated XP: ' .. xpAccum)
+          t:ColourNote (
+            "gray", "black", "You have gained xp: ",
+            "cornflowerblue", "black", xpDiff)
+          t:ColourNote (
+            "#C0C0C0", "black", "Accumulated XP: ",
+            "cyan", "black", xpAccum)
 	      end	 	 
         
         SetVariable("xpOld", xpCurrent)	 
@@ -155,17 +161,17 @@
       Note ('xpHour Timer on')
    
       xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
-   	    if xpHourOpened == true then
-	        Note ("XP Tracking Window On")
-	  
+   	    if xpHourOpened == true then 
 	        t:DeleteOutput()
 	        t:Note ('Timer Started')
-	        t:Note ('Accumulated XP: ' .. xpAccum)
+	        t:ColourNote (
+            "#C0C0C0", "black", "Accumulated XP: ",
+            "cyan", "black", xpAccum)
 	      else
 	        Note ("XP Tracking Window Did Not Load")
 	      end
 	
-      openedSWmudOk = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+      SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
 
     </send>
   </alias>
@@ -188,7 +194,9 @@
    
       t:DeleteOutput()
       t:Note ('Timer Aborted')
-      t:Note ('Accumulated XP: ' .. xpAccum)
+      t:ColourNote (
+        "#C0C0C0", "black", "Accumulated XP: ",
+        "cyan", "black", xpAccum)
 	
     </send>
   </alias>
@@ -205,5 +213,35 @@
   </timer>
 
 </timers>
+
+<!--  Script  -->
+
+<script>
+
+  <![CDATA[
+
+    function OnPluginInstall (s)
+      
+      local t = GetWorld ("xpHour")  -- get "xpHour" world
+
+      SetVariable("xpOld", -1)
+      SetVariable("xpHourRoutine", 0)
+      SetVariable("xpAccum", 0)
+
+      xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
+      SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+
+      if xpHourOpened == true then
+        t:DeleteOutput()
+        t:Note ('XP_Gained Plugin installed')
+      else
+	      Note ("XP Tracking Window Did Not Load")
+	    end
+
+    end -- function OnPluginInstall
+
+  ]]>
+
+</script>
 
 </muclient>
