@@ -87,21 +87,21 @@
             "gray", "black", "You have gained xp: ",
             "cornflowerblue", "black", xpDiff)
           SetStatus ("You have gained xp: ", xpDiff)
-	      end
-	 
-	      if xpHourRoutine ~= 0 then
-	        xpAccum = xpAccum + xpDiff
-	        Note ('Accumulated XP: ' .. xpAccum)
-	        SetVariable("xpAccum", xpAccum)
+
+	        if xpHourRoutine ~= 0 then
+	          xpAccum = xpAccum + xpDiff
+	          SetVariable("xpAccum", xpAccum)
 	   
-	        t:DeleteOutput()
-          t:ColourNote (
-            "gray", "black", "You have gained xp: ",
-            "cornflowerblue", "black", xpDiff)
-          t:ColourNote (
-            "#C0C0C0", "black", "Accumulated XP: ",
-            "cyan", "black", xpAccum)
-	      end	 	 
+	          t:DeleteOutput()
+            t:ColourNote (
+              "gray", "black", "You have gained xp: ",
+              "cornflowerblue", "black", xpDiff)
+            t:ColourNote (
+              "#C0C0C0", "black", "Accumulated xp: ",
+              "cyan", "black", xpAccum)
+	        end	
+
+	      end
         
         SetVariable("xpOld", xpCurrent)	 
       end
@@ -152,26 +152,33 @@
     sequence="100"
     >
     <send>
-      local t = GetWorld ("xpHour")  -- get "xpHour" world
-      local xpAccum = tonumber(GetVariable("xpAccum"))
+      local xpOld = tonumber(GetVariable("xpOld"))
+
+      if xpOld ~= -1 then
+        local t = GetWorld ("xpHour")  -- get "xpHour" world
   
-      SetVariable ("xpHourRoutine", 1)
-      SetVariable ("xpAccum", 0)
-      EnableTimer ("xpHour_Timer", true)
-      Note ('xpHour Timer on')
+        SetVariable ("xpHourRoutine", 1)
+        SetVariable ("xpAccum", 0)
+        EnableTimer ("xpHour_Timer", true)
+        Note ('xpHour Timer on')
+
+        local xpAccum = tonumber(GetVariable("xpAccum"))
    
-      xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
-   	    if xpHourOpened == true then 
-	        t:DeleteOutput()
-	        t:Note ('Timer Started')
-	        t:ColourNote (
-            "#C0C0C0", "black", "Accumulated XP: ",
-            "cyan", "black", xpAccum)
-	      else
-	        Note ("XP Tracking Window Did Not Load")
-	      end
+        xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
+   	      if xpHourOpened == true then 
+	          t:DeleteOutput()
+	          t:Note ('Timer Started')
+	          t:ColourNote (
+              "#C0C0C0", "black", "Accumulated xp: ",
+              "cyan", "black", xpAccum)
+	        else
+	          Note ("XP Tracking Window Did Not Load")
+	        end
 	
-      SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+        SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+      else
+        Note ('Initialize xp first: Get mud to output standard prompt')
+      end  
 
     </send>
   </alias>
@@ -195,7 +202,7 @@
       t:DeleteOutput()
       t:Note ('Timer Aborted')
       t:ColourNote (
-        "#C0C0C0", "black", "Accumulated XP: ",
+        "#C0C0C0", "black", "Accumulated xp: ",
         "cyan", "black", xpAccum)
 	
     </send>
