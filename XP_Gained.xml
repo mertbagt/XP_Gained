@@ -165,6 +165,8 @@
         SetVariable ("xpAccum", 0)
         EnableTimer ("xpHour_Timer", true)
         ResetTimer("xpHour_Timer")
+        EnableTimer ("xpHour_Display", true)
+        ResetTimer("xpHour_Display")
         Note ('XP Hour Timer on')
 
         local xpDiff = tonumber(GetVariable("xpDiff"))
@@ -216,6 +218,7 @@
 
       SetVariable ("xpHourRoutine", 0)
       EnableTimer ("xpHour_Timer", false)
+      EnableTimer ("xpHour_Display", false)
       Note ('XP Hour Timer off')
 	
     </send>
@@ -263,11 +266,42 @@
 <!-- timers -->
 
 <timers>
+
   <timer
     name="xpHour_Timer"
     enabled="n"
     hour="1"
     second="0.00"
+    offset_second="0.00"
+    send_to="12"
+    >
+    <send>
+      local t = GetWorld ("xpHour")  -- get "xpHour" world
+      local xpDiff = tonumber(GetVariable("xpDiff"))
+      local xpAccum = tonumber(GetVariable("xpAccum"))
+
+      EnableTimer ("xpHour_Display", false)
+
+      t:DeleteOutput()
+      t:ColourNote (
+        "gray", "black", "You have gained xp: ",
+        "cornflowerblue", "black", xpDiff)
+      t:ColourNote (
+        "#C0C0C0", "black", "Accumulated xp: ",
+        "cyan", "black", xpAccum)
+      t:Note ('Hour Elapsed: Timer Off')
+
+      SetVariable ("xpHourRoutine", 0)
+      EnableTimer ("xpHour_Timer", false)
+      Note ('XP Hour Timer off')
+
+    </send>
+  </timer>
+
+  <timer
+    name="xpHour_Display"
+    enabled="n"
+    second="1.00"
     offset_second="0.00"
     send_to="12"
     >
@@ -283,11 +317,7 @@
       t:ColourNote (
         "#C0C0C0", "black", "Accumulated xp: ",
         "cyan", "black", xpAccum)
-      t:Note ('Hour Elapsed: Timer Off')
-
-      SetVariable ("xpHourRoutine", 0)
-      EnableTimer ("xpHour_Timer", false)
-      Note ('XP Hour Timer off')
+      DisplayTimeRemaining ()
 
     </send>
   </timer>
