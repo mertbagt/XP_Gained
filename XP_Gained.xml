@@ -249,14 +249,14 @@
 
     function OnPluginInstall (s)
       
-      local t = GetWorld ("xpHour")  -- get "xpHour" world
-
       SetVariable("xpOld", -1)
       SetVariable("xpHourRoutine", 0)
       SetVariable("xpAccum", 0)
 
       xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
       SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+
+      local t = GetWorld ("xpHour")  -- get "xpHour" world
 
       if xpHourOpened == true then
         t:DeleteOutput()
