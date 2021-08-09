@@ -196,27 +196,6 @@
     </send>
   </alias>
 
-  <alias
-    enabled="y"
-    group="xpHour"
-    match="xpstatus"
-    regexp="y"
-    send_to="12"
-    sequence="100"
-    >
-    <send>
-      local xpHourRoutine = tonumber(GetVariable("xpHourRoutine"))
-
-      DisplayXP ()
-      if xpHourRoutine == 0 then
-        DisplayTimeRemaining ('Timer Off')  
-      else
-        DisplayTimeRemaining ()
-      end
-
-    </send>
-  </alias>
-
 </aliases>
 
 <!-- timers -->
