@@ -78,9 +78,9 @@
       local xpDiff = xpCurrent - xpOld
       local xpHourRoutine = tonumber(GetVariable("xpHourRoutine"))
       local xpAccum = tonumber(GetVariable("xpAccum"))
-      local t = GetWorld ("xpHour")  -- get "xpHour" world
 
       if xpDiff ~= 0 then
+        SetVariable("xpDiff", xpDiff)	
         if xpOld == -1 then
 	        Note ('initializing xp')
 	      else
@@ -93,20 +93,13 @@
 	          xpAccum = xpAccum + xpDiff
 	          SetVariable("xpAccum", xpAccum)
 	   
-	          t:DeleteOutput()
-            t:ColourNote (
-              "gray", "black", "You have gained xp: ",
-              "cornflowerblue", "black", xpDiff)
-            t:ColourNote (
-              "#C0C0C0", "black", "Accumulated xp: ",
-              "cyan", "black", xpAccum)
+	          DisplayXP ()
             DisplayTimeRemaining ()
 	        end	
 
 	      end
         
         SetVariable("xpOld", xpCurrent)
-        SetVariable("xpDiff", xpDiff)	
       end
    
     </send>
@@ -158,8 +151,6 @@
       local xpOld = tonumber(GetVariable("xpOld"))
 
       if xpOld ~= -1 then
-        local t = GetWorld ("xpHour")  -- get "xpHour" world
-        
         SetVariable ("xpDiff", 0)
         SetVariable ("xpHourRoutine", 1)
         SetVariable ("xpAccum", 0)
@@ -167,20 +158,11 @@
         ResetTimer("xpHour_Timer")
         EnableTimer ("xpHour_Display", true)
         ResetTimer("xpHour_Display")
-        Note ('XP Hour Timer on')
-
-        local xpDiff = tonumber(GetVariable("xpDiff"))
-        local xpAccum = tonumber(GetVariable("xpAccum"))
-   
+        
         xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
-   	      if xpHourOpened == true then 
-	          t:DeleteOutput()
-	          t:ColourNote (
-              "gray", "black", "You have gained xp: ",
-              "cornflowerblue", "black", xpDiff)
-	          t:ColourNote (
-              "#C0C0C0", "black", "Accumulated xp: ",
-              "cyan", "black", xpAccum)
+   	      if xpHourOpened == true then
+            Note ('XP Hour Timer on')
+	          DisplayXP ()
             DisplayTimeRemaining ()  
 	        else
 	          Note ("XP Tracking Window Did Not Load")
@@ -203,18 +185,8 @@
     sequence="100"
     >
     <send>
-      local t = GetWorld ("xpHour")  -- get "xpHour" world
-      local xpDiff = tonumber(GetVariable("xpDiff"))
-      local xpAccum = tonumber(GetVariable("xpAccum"))
-
-      t:DeleteOutput()
-      t:ColourNote (
-        "gray", "black", "You have gained xp: ",
-        "cornflowerblue", "black", xpDiff)
-      t:ColourNote (
-        "#C0C0C0", "black", "Accumulated xp: ",
-        "cyan", "black", xpAccum)
-      t:Note ('Timer Aborted')  
+      DisplayXP ()
+      DisplayTimeRemaining ('Timer Aborted')  
 
       SetVariable ("xpHourRoutine", 0)
       EnableTimer ("xpHour_Timer", false)
@@ -233,28 +205,12 @@
     sequence="100"
     >
     <send>
-      local t = GetWorld ("xpHour")  -- get "xpHour" world
-      local xpDiff = tonumber(GetVariable("xpDiff"))
       local xpHourRoutine = tonumber(GetVariable("xpHourRoutine"))
-      local xpAccum = tonumber(GetVariable("xpAccum"))
 
+      DisplayXP ()
       if xpHourRoutine == 0 then
-        t:DeleteOutput()
-        t:ColourNote (
-          "gray", "black", "You have gained xp: ",
-          "cornflowerblue", "black", xpDiff)
-        t:ColourNote (
-          "#C0C0C0", "black", "Accumulated xp: ",
-          "cyan", "black", xpAccum)
-        t:Note ('Timer Off')  
+        DisplayTimeRemaining ('Timer Off')  
       else
-        t:DeleteOutput()
-        t:ColourNote (
-          "gray", "black", "You have gained xp: ",
-          "cornflowerblue", "black", xpDiff)
-        t:ColourNote (
-          "#C0C0C0", "black", "Accumulated xp: ",
-          "cyan", "black", xpAccum)
         DisplayTimeRemaining ()
       end
 
@@ -276,20 +232,10 @@
     send_to="12"
     >
     <send>
-      local t = GetWorld ("xpHour")  -- get "xpHour" world
-      local xpDiff = tonumber(GetVariable("xpDiff"))
-      local xpAccum = tonumber(GetVariable("xpAccum"))
-
       EnableTimer ("xpHour_Display", false)
 
-      t:DeleteOutput()
-      t:ColourNote (
-        "gray", "black", "You have gained xp: ",
-        "cornflowerblue", "black", xpDiff)
-      t:ColourNote (
-        "#C0C0C0", "black", "Accumulated xp: ",
-        "cyan", "black", xpAccum)
-      t:Note ('Hour Elapsed: Timer Off')
+      DisplayXP ()
+      DisplayTimeRemaining ('Hour Elapsed: Timer Off')
 
       SetVariable ("xpHourRoutine", 0)
       EnableTimer ("xpHour_Timer", false)
@@ -306,17 +252,7 @@
     send_to="12"
     >
     <send>
-      local t = GetWorld ("xpHour")  -- get "xpHour" world
-      local xpDiff = tonumber(GetVariable("xpDiff"))
-      local xpAccum = tonumber(GetVariable("xpAccum"))
-
-      t:DeleteOutput()
-      t:ColourNote (
-        "gray", "black", "You have gained xp: ",
-        "cornflowerblue", "black", xpDiff)
-      t:ColourNote (
-        "#C0C0C0", "black", "Accumulated xp: ",
-        "cyan", "black", xpAccum)
+      DisplayXP ()
       DisplayTimeRemaining ()
 
     </send>
@@ -351,29 +287,50 @@
 
     end -- function OnPluginInstall
 
-    function DisplayTimeRemaining ()
+    function DisplayXP ()
+
+      local t = GetWorld ("xpHour")  -- get "xpHour" world
+      local xpDiff = tonumber(GetVariable("xpDiff"))
+      local xpAccum = tonumber(GetVariable("xpAccum"))
+
+      t:DeleteOutput ()
+      t:ColourNote (
+        "gray", "black", "You have gained xp: ",
+        "cornflowerblue", "black", xpDiff)
+      t:ColourNote (
+        "#C0C0C0", "black", "Accumulated xp: ",
+        "cyan", "black", xpAccum)  
+
+    end -- function DisplayXP
+
+    function DisplayTimeRemaining (msg)
     
       local t = GetWorld ("xpHour")  -- get "xpHour" world
-      local xpHourRoutine = tonumber(GetVariable("xpHourRoutine"))
-      local secRemain = GetTimerInfo ("xpHour_Timer", 13)
 
-      secRemain = math.floor(secRemain + 0.5)
-      min = math.floor(secRemain / 60)
-      sec = secRemain - (min * 60)
+      if msg == nil then
 
-      if sec < 10 then
-        sec = "0" .. sec
+        local secRemain = GetTimerInfo ("xpHour_Timer", 13)
+
+        secRemain = math.floor(secRemain + 0.5)
+        min = math.floor(secRemain / 60)
+        sec = secRemain - (min * 60)
+
+        if sec < 10 then
+          sec = "0" .. sec
+        end
+
+        if min < 10 then
+          min = " " .. min
+        end
+
+        t:ColourNote(
+          "gray", "black", "Time Remaining: ",
+          "cornflowerblue", "black", min,
+          "cornflowerblue", "black", ":",
+          "cornflowerblue", "black", sec)
+      else
+        t:Note (msg) 
       end
-
-      if min < 10 then
-        min = " " .. min
-      end
-
-      t:ColourNote(
-        "gray", "black", "Time Remaining: ",
-        "cornflowerblue", "black", min,
-        "cornflowerblue", "black", ":",
-        "cornflowerblue", "black", sec)
 
     end -- function DisplayTimeRemaining
 
