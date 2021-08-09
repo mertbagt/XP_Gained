@@ -159,7 +159,7 @@
         EnableTimer ("xpHour_Display", true)
         ResetTimer("xpHour_Display")
         
-        xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
+        local xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
    	      if xpHourOpened == true then
             Note ('XP Hour Timer on')
 	          DisplayXP ()
@@ -168,7 +168,7 @@
 	          Note ("XP Tracking Window Did Not Load")
 	        end
 	
-        SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+        local SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
       else
         Note ('Initialize xp first: Get mud to output a standard prompt')
       end  
@@ -252,8 +252,8 @@
       SetVariable("xpHourRoutine", 0)
       SetVariable("xpAccum", 0)
 
-      xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
-      SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+      local xpHourOpened = world.Open ("worlds\\\\xpHour.MCL")
+      local SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
 
       local t = GetWorld ("xpHour")  -- get "xpHour" world
 
@@ -291,8 +291,8 @@
         local secRemain = GetTimerInfo ("xpHour_Timer", 13)
 
         secRemain = math.floor(secRemain + 0.5)
-        min = math.floor(secRemain / 60)
-        sec = secRemain - (min * 60)
+        local min = math.floor(secRemain / 60)
+        local sec = secRemain - (min * 60)
 
         if sec < 10 then
           sec = "0" .. sec
