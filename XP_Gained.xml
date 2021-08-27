@@ -108,7 +108,7 @@
   <trigger
     enabled="y"
     keep_evaluating="y"
-    match="^\d+/\d+ (\-\d+|\d+)/(\-\d+|\d+) (\d+) \d+ .* &gt;"
+    match="^\d+/\d+ .* (\-\d+|\d+)/(\-\d+|\d+) (\d+) .* &gt;"
     regexp="y"
     repeat="y"
     send_to="12"
@@ -118,16 +118,30 @@
       local xpCurrent = %3
       local xpOld = tonumber(GetVariable("xpOld"))
       local xpDiff = xpCurrent - xpOld
-   
+      local xpHourRoutine = tonumber(GetVariable("xpHourRoutine"))
+      local xpAccum = tonumber(GetVariable("xpAccum"))
+
       if xpDiff ~= 0 then
+        SetVariable("xpDiff", xpDiff)	
         if xpOld == -1 then
 	        Note ('initializing xp')
 	      else
-	        Note ('You have gained xp: ' .. xpDiff)
+	        ColourNote (
+            "gray", "black", "You have gained xp: ",
+            "cornflowerblue", "black", xpDiff)
           SetStatus ("You have gained xp: ", xpDiff)
-	      end
 
-        SetVariable("xpOld", xpCurrent)	 
+	        if xpHourRoutine ~= 0 then
+	          xpAccum = xpAccum + xpDiff
+	          SetVariable("xpAccum", xpAccum)
+	   
+	          DisplayXP ()
+            DisplayTimeRemaining ()
+	        end	
+
+	      end
+        
+        SetVariable("xpOld", xpCurrent)
       end
    
     </send>
