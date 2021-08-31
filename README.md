@@ -12,3 +12,8 @@ prompt disc
 
 Sec 5
 alias commands
+
+Sec 6
+todos:
+   add help aliases
+   add graphical examples
