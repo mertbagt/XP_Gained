@@ -1,8 +1,12 @@
-Sec 1
-brief explanation of SWmud
+#XP Gained
+This is a MUSHclient plugin for the specific MUD, SWmud
 
-Sec 2
-brief explanation of MUSHclient
+##SWmud
+[SWmud homepage](http://www.swmud.org/)
+telnet://swmud.org:6666
+
+##MUSHclient
+[MUSHclient homepage](http://www.gammon.com.au/mushclient/mushclient.htm)
 
 Sec 3
 install
