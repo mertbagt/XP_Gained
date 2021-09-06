@@ -14,7 +14,11 @@ telnet://swmud.org:6666
 
 [MUSHclient homepage](http://www.gammon.com.au/mushclient/mushclient.htm)
 
-Sec 3 install
+## Install
+
+Find where your Mushclient is installed.  Place XP_Gained.xml in your plugins folder at:
+
+../Mushclient/worlds/plugins
 
 sec 4 Prompts
 
