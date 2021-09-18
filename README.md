@@ -20,7 +20,11 @@ Find where your MUSHclient is installed.  Place XP_Gained.xml in your plugins fo
 
 ../Mushclient/worlds/plugins
 
-Then add the plugin in MUSHclient with File, Plugin, Add and select the file
+Then log in to SWmud so that when you select File from the top menu options, the option Plugins appears:
+
+![Plugin option location](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour01.JPG)
+
+add the plugin in MUSHclient with File, Plugin, Add and select the file
 
 <insert pic>
 
