@@ -24,7 +24,11 @@ Then log in to SWmud so that when you select File from the top menu options, the
 
 ![Plugin option location](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour01.JPG)
 
-add the plugin in MUSHclient with File, Plugin, Add and select the file
+click Add:
+
+![Plugin menu](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour02.JPG)
+
+and select the file from your folder directory.
 
 <insert pic>
 
