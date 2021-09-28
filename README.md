@@ -32,7 +32,13 @@ and select the file from your folder directory.
 
 <insert pic>
 
-XP_Gained works by sending info to a secondary window within MUSHclient.  We set this up by selecting File, New World
+## Setup
+
+XP_Gained works by sending info to a secondary window within MUSHclient.  We set this up by:
+
+Select File, New World:
+
+![File menu -> New World](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour1.JPG)
 
 and then entering the following settings:
 
@@ -44,7 +50,7 @@ and then entering the following settings:
 
 and hit save
 
-sec 4 Prompts
+## Prompts
 
 prompt desc
 
