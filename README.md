@@ -42,11 +42,11 @@ Select File, New World:
 
 and then entering the following settings:
 
-###World Name: xpHour
+### World Name: xpHour
 
-###TCP/IP add: 0.0.0.0
+### TCP/IP add: 0.0.0.0
 
-###Port: 4000
+### Port: 4000
 
 and hit save
 
