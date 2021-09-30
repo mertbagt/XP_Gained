@@ -30,13 +30,11 @@ click Add:
 
 and select the file from your folder directory.
 
-<insert pic>
-
 ## Setup
 
-XP_Gained works by sending info to a secondary window within MUSHclient.  We set this up by:
+XP_Gained works by sending info to a secondary window within MUSHclient.  The 'New World' we're setting up below will define this secondary window and allow the code to interact with it.
 
-Select File, New World:
+We set this up by first selecting File, New World:
 
 ![File menu -> New World](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour1.JPG)
 
