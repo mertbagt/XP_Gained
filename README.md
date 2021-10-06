@@ -44,6 +44,8 @@ and then entering the following settings:
 * TCP/IP add: 0.0.0.0
 * Port: 4000
 
+![World Settings](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour2.JPG)
+
 and hit save
 
 ## Prompts
