@@ -41,6 +41,8 @@ We set this up by first selecting File, New World:
 and then entering the following settings:
 
 * World Name: xpHour
+
+MUD address and port:
 * TCP/IP add: 0.0.0.0
 * Port: 4000
 
