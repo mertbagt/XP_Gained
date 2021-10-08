@@ -48,7 +48,9 @@ MUD address and port:
 
 ![World Settings](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour2.JPG)
 
-and hit OK.  A prompt should pop up asking to 'Save changes to Untitled?' -> go ahead and click Yes
+and hit OK.  
+
+A prompt should pop up asking to 'Save changes to Untitled?' -> go ahead and click Yes
 
 ## Prompts
 
