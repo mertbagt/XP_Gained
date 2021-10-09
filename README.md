@@ -52,6 +52,8 @@ and hit OK.
 
 A prompt should pop up asking to 'Save changes to Untitled?' -> go ahead and click Yes
 
+![Save Prompt](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour3.JPG)
+
 ## Prompts
 
 prompt desc
