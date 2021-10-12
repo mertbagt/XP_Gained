@@ -54,6 +54,18 @@ A prompt should pop up asking to 'Save changes to Untitled?' -> go ahead and cli
 
 ![Save Prompt](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour3.JPG)
 
+Shouldn't be strictly necessary but lines 185 and 270 put the focus back on the main window.  If your main world file is something other than SWmud.MCL, then find and replace your file name for SWmud.MCL on those lines with the name you're using.
+
+example, change this:
+```
+local SWmudOpened = world.Open ("worlds\\\\SWmud.MCL") -- puts focus back on main window
+```
+to
+```
+local SWmudOpened = world.Open ("worlds\\\\YourFileName.MCL") -- puts focus back on main window
+```
+where you use your actual file name in place of YourFileName
+
 ## Prompts
 
 prompt desc
