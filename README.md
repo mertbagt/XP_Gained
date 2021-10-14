@@ -30,7 +30,7 @@ click Add:
 
 and select the file from your folder directory.
 
-## Setup
+## Setup Part 1 - Files and Settings
 
 XP_Gained works by sending info to a secondary window within MUSHclient.  The 'New World' we're setting up below will define this secondary window and allow the code to interact with it.
 
@@ -66,9 +66,10 @@ local SWmudOpened = world.Open ("worlds\\\\YourFileName.MCL") -- puts focus back
 ```
 where you use your actual file name in place of YourFileName
 
-## Prompts
+## Setup Part 2 - Prompts
 
-prompt desc
+The way this plugin keeps track of your xp changes, is by reading your xp from your prompt and keeping track of when that value changes.
+
 
 ## Alias Commands
 
