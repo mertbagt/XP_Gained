@@ -70,6 +70,44 @@ where you use your actual file name in place of YourFileName
 
 The way this plugin keeps track of your xp changes, is by reading your xp from your prompt and keeping track of when that value changes.
 
+--=== Guide Entry on prompt (Player Command) ===--
+Command: prompt
+Syntax: <prompt [options]>
+        <prompt no color [on/off]>
+Usable by: Anyone
+
+Sets the format of your prompt.
+
+The options are: 
+
+  Number  |  Info
+----------|-----------
+    1     |  hit points 
+    2     |  hit points/max hit points 
+    3     |  social points 
+    4     |  social points/max social points 
+    5     |  experience points 
+    6     |  credits 
+    7     |  alignment 
+    8     |  jedi alignment 
+    9     |  alignment/jedi alignment 
+    10    |  bmode status 
+    11    |  drugged status 
+    12    |  wimpy hps 
+    13    |  current ammo remaining (wielded weapon) 
+    14    |  current ammo/max ammo (wielded weapon) 
+    15    |  hidden status 
+    16    |  status tags** 
+    17    |  unread mail flag 
+    18    |  shield hit points 
+    19    |  vehicle armor
+    20    |  vehicle armor/vehicle max armor
+
+Example: prompt 2 5 9.
+Example: prompt 2 18 5. (numbers can be in any order).
+
+Typing <prompt clear> returns prompt back to default.
+Typing <prompt no color [on/off]> toggles colour in prompt.
 
 ## Alias Commands
 
