@@ -70,6 +70,7 @@ where you use your actual file name in place of YourFileName
 
 The way this plugin keeps track of your xp changes, is by reading your xp from your prompt and keeping track of when that value changes.
 
+```
 --=== Guide Entry on prompt (Player Command) ===--
 Command: prompt
 Syntax: <prompt [options]>
@@ -90,7 +91,7 @@ The options are:
     6     |  credits 
     7     |  alignment 
     8     |  jedi alignment 
-    9     |  alignment/jedi alignment 
+    9     |  alignment/jedi alignment
     10    |  bmode status 
     11    |  drugged status 
     12    |  wimpy hps 
@@ -108,6 +109,7 @@ Example: prompt 2 18 5. (numbers can be in any order).
 
 Typing <prompt clear> returns prompt back to default.
 Typing <prompt no color [on/off]> toggles colour in prompt.
+```
 
 ## Alias Commands
 
