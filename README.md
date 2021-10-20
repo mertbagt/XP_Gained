@@ -88,7 +88,7 @@ The options are:
     3     |  social points 
     4     |  social points/max social points 
     5     |  experience points 
-    6     |  credits 
+    6     |  credits
     7     |  alignment 
     8     |  jedi alignment 
     9     |  alignment/jedi alignment
@@ -109,7 +109,11 @@ Example: prompt 2 18 5. (numbers can be in any order).
 
 Typing <prompt clear> returns prompt back to default.
 Typing <prompt no color [on/off]> toggles colour in prompt.
+
+![Color Chart](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour4.JPG)
 ```
+
+
 
 ## Alias Commands
 
