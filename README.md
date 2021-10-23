@@ -109,11 +109,8 @@ Example: prompt 2 18 5. (numbers can be in any order).
 
 Typing <prompt clear> returns prompt back to default.
 Typing <prompt no color [on/off]> toggles colour in prompt.
-
-![Color Chart](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour4.JPG)
 ```
-
-
+![Color Chart](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour4.JPG)
 
 ## Alias Commands
 
