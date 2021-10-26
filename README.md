@@ -112,6 +112,12 @@ Typing <prompt no color [on/off]> toggles colour in prompt.
 ```
 ![Color Chart](https://github.com/mertbagt/XP_Gained/blob/main/Images/xpHour4.JPG)
 
+The plugin is set up for either of two prompt configurations:
+
+x
+
+y
+
 ## Alias Commands
 
 xpstart - Starts a one hour timer.  This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.
