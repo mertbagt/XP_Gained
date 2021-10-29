@@ -116,13 +116,17 @@ The plugin is set up by default for either of two prompt configurations in XP_Ga
 
 ### Configuration 1
 prompt: 2 7 5 6 10 11 14 16
+
 ![Config 1](https://github.com/mertbagt/XP_Gained/blob/main/Images/prompt01.png)
-ln 69 match="^\d+/\d+ (\-\d+|\d+) (\d+) \d+ .* &gt;"
+
+line 69: match="^\d+/\d+ (\-\d+|\d+) (\d+) \d+ .* &gt;"
 
 ### Configuration 2
 prompt 2 11 9 5 10
+
 ![Config 1](https://github.com/mertbagt/XP_Gained/blob/main/Images/prompt02.png)
-ln 111 match="^\d+/\d+ .* (\-\d+|\d+)/(\-\d+|\d+) (\d+) .* &gt;"
+
+line 111: match="^\d+/\d+ .* (\-\d+|\d+)/(\-\d+|\d+) (\d+) .* &gt;"
 ## Alias Commands
 
 xpstart - Starts a one hour timer.  This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.
