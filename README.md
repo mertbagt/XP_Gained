@@ -133,7 +133,9 @@ prompt 2 11 9 5 10
 
 line 111: match="^\d+/\d+ .* (\-\d+|\d+)/(\-\d+|\d+) (\d+) .* &gt;"
 ```
-If your prompt is different, 
+If your prompt is different, you need to translate it into regex:
+
+![Regex](https://www.gammon.com.au/scripts/doc.php?general=regexp)
 
 ## Alias Commands
 
