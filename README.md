@@ -137,6 +137,10 @@ If your prompt is different, you need to translate it into regex:
 
 ![Regex](https://www.gammon.com.au/scripts/doc.php?general=regexp)
 
+and then replace either line 69 or 111 with:
+
+match="<your regex here>"
+
 ## Alias Commands
 
 xpstart - Starts a one hour timer.  This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.
