@@ -135,7 +135,7 @@ line 111: match="^\d+/\d+ .* (\-\d+|\d+)/(\-\d+|\d+) (\d+) .* &gt;"
 ```
 If your prompt is different, you need to translate it into regex:
 
-[Regex](https://www.gammon.com.au/scripts/doc.php?general=regexp)
+[Regex Syntax](https://www.gammon.com.au/scripts/doc.php?general=regexp)
 
 and then replace either line 69 or 111 with:
 
