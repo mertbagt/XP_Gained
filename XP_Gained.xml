@@ -210,6 +210,21 @@
     </send>
   </alias>
 
+  <alias
+    enabled="y"
+    group="xpHour"
+    match="xphelp"
+    regexp="y"
+    send_to="12"
+    sequence="100"
+    >
+    <send>
+      Note ('XP Hour Commands:')
+      Note ('xpstart')
+	    Note ('Starts a one hour timer. This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.')
+    </send>
+  </alias>
+
 </aliases>
 
 <!-- timers -->
