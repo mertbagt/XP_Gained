@@ -224,6 +224,7 @@
 	    Note ('Starts a one hour timer. This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.')
       Note ('')
       Note ('xpstop')
+      Note ('Halts the timer.')
     </send>
   </alias>
 
