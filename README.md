@@ -143,12 +143,12 @@ match="&lt;your regex here&gt;"
 
 ## Alias Commands
 
+xphelp - lists out plugin commands in the mud client.
+
 xpstart - Starts a one hour timer.  This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.
 
 xpstop - Halts the timer.
 
 Sec 6 todos:
 
-   add help aliases
-   
-   add graphical examples
+  add graphical examples
