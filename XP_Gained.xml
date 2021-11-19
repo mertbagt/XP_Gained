@@ -219,12 +219,12 @@
     sequence="100"
     >
     <send>
-      Note ('XP Hour Commands:')
-      Note ('xpstart')
-	    Note ('Starts a one hour timer. This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.')
       Note ('')
-      Note ('xpstop')
-      Note ('Halts the timer.')
+      Note ('XP Hour Commands:')
+      Note ('')
+      Note ('xpstart - Starts a one hour timer. This also resets the aggregated xp totals from any prior uses of the timer and begins collecting a new aggregation.')
+      Note ('')
+      Note ('xpstop - Halts the timer.')
     </send>
   </alias>
 
