@@ -149,6 +149,4 @@ xpstart - Starts a one hour timer.  This also resets the aggregated xp totals fr
 
 xpstop - Halts the timer.
 
-Sec 6 todos:
-
-  add graphical examples
+## Graphical Examples
