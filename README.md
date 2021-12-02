@@ -150,3 +150,5 @@ xpstart - Starts a one hour timer.  This also resets the aggregated xp totals fr
 xpstop - Halts the timer.
 
 ## Graphical Examples
+
+![Initial Screen](https://github.com/mertbagt/XP_Gained/blob/main/Images/initial.JPG)
