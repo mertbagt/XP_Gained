@@ -155,4 +155,12 @@ xpstop - Halts the timer.
 
 Initial screen on start up.  I have my window set to the side and normally have other side windows above and below, but obviously rearrange your windows to personal taste.
 
+---
+
 ![Start Timer](https://github.com/mertbagt/XP_Gained/blob/main/Images/start.JPG)
+
+After entering 'xpstart', the timer starts.  
+
+'You have gained xp' updates when there's a new prompt.  So bear in mind it's possible to gain xp from more than one source between fresh prompts.
+
+'Accumulated xp' is total xp gained from when the timer starts to either now if the timer is still running, or the moment the timer stopped. 
