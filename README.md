@@ -151,9 +151,11 @@ xpstop - Halts the timer.
 
 ## Graphical Examples
 
+### Initial Screen
+
 ![Initial Screen](https://github.com/mertbagt/XP_Gained/blob/main/Images/initial.JPG)
 
-Initial screen on start up.  I have my window set to the side and normally have other side windows above and below, but obviously rearrange your windows to personal taste.
+This is an example of the initial screen on start up.  I have my window set to the side and normally have other side windows above and below, but obviously rearrange your windows to personal taste.
 
 ---
 
