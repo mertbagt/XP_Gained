@@ -165,4 +165,10 @@ After entering 'xpstart', the timer starts.
 
 'You have gained xp' updates when there's a new prompt.  So bear in mind it's possible to gain xp from more than one source between fresh prompts.
 
-'Accumulated xp' is total xp gained from when the timer starts to either now if the timer is still running, or the moment the timer stopped. 
+'Accumulated xp' is total xp gained from when the timer starts to either: 
+
+1) this moment if the timer is still running
+
+or
+
+2) the moment the timer stopped. 
