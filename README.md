@@ -171,4 +171,6 @@ After entering 'xpstart', the timer starts.
 
 or
 
-2) the moment the timer stopped. 
+2) the moment the timer stopped.
+
+![In Actionr](https://github.com/mertbagt/XP_Gained/blob/main/Images/mediares.JPG)
