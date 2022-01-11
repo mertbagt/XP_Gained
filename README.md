@@ -175,6 +175,6 @@ or
 
 2) the moment the timer stopped.
 
-
+![Timer Off](https://github.com/mertbagt/XP_Gained/blob/main/Images/timerOff.JPG)
 
 ---
