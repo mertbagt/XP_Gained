@@ -181,4 +181,4 @@ or
 
 3) the command xpstop is used to halt the timer
 
-![Timer Ended](https://github.com/mertbagt/XP_Gained/blob/main/Images/timerOff.JPG)
+![Timer Ended](https://github.com/mertbagt/XP_Gained/blob/main/Images/timeraborted.JPG)
